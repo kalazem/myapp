@@ -19,13 +19,13 @@ class App
         //if the requested controller exists 
         if(isset($url[1])){
             echo "true1";
-        if (file_exists('../controllers/' . $url[1] . '.php')) {
+        if (file_exists('../app/private/controllers/' . $url[1] . '.php')) {
             echo "true2";
             $this->controller = $url[1];
             unset($url[1]);
         }
     }
-        require_once '../private/controllers/' . $this->controller . '.php';
+        require_once '../app/private/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
         //if the requested method exists 
