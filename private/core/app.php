@@ -32,8 +32,7 @@ class App
 
         //assigns any passed parameters 
         $this->params = $url ? array_values($url) : [];
-        print_r($this->params);
-        //calls required controller and method; passes any existing parameters 
+         //calls required controller and method; passes any existing parameters 
         call_user_func_array([$this->controller,$this->method],$this->params);
     }
 
