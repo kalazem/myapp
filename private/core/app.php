@@ -10,6 +10,8 @@ class App{
     public function __construct()
     {
           echo "from app";
+          if(isset($_GET))
+          print_r($_GET);
          print_r($this->parseUrl());
          echo "after app";
     }
