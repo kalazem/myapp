@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase https://my-forum-app-kal.herokuapp.com
+RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /index.php?$1 [QSA,L]
