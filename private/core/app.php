@@ -9,7 +9,7 @@ class App{
     protected $params = []; //holds any passed parameters via url 
     public function __construct()
     {
-        //  echo "from app";
+          echo "from app";
          print_r($this->parseUrl());
     }
 
