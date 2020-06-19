@@ -10,7 +10,7 @@ class App
     protected $method = "index";  //default method 
     protected $params = []; //holds any passed parameters via url 
     public function __construct(){
-        
+        echo getcwd();
         var_dump(file_exists('../controllers/home.php'));
         print_r($_SERVER['REQUEST_URI']);
         print_r($this->parseUrl());
