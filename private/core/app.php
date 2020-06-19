@@ -17,17 +17,22 @@ class App
          $url = $this->parseUrl();
          unset($url[0]);
         //if the requested controller exists 
-        if(isset($url[1]))
+        if(isset($url[1])){
+            echo "true1";
         if (file_exists('../my-forum-app-kal/private/controllers/' . $url[1] . '.php')) {
+            echo "true2";
             $this->controller = $url[1];
             unset($url[1]);
         }
+    }
         require_once '../my-forum-app-kal/private/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
         //if the requested method exists 
         if(isset($url[2])){
+            echo "true3";
             if(method_exists($this->controller,$url[2])){
+                echo "true4";
                 // echo "method exists";
                 $this->method = $url[2];
                 unset($url[2]);
