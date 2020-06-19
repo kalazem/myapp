@@ -4,4 +4,8 @@ class Home {
     {
         echo "controllers/home";
     }
+
+    public function index($name = ''){
+        echo $name;
+     }
 }
