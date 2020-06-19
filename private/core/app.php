@@ -11,7 +11,7 @@ class App
     protected $params = []; //holds any passed parameters via url 
     public function __construct(){
         
-        var_dump(file_exists('../private/controllers/home.php'));
+        var_dump(file_exists('../myapp/private/controllers/home.php'));
         print_r($_SERVER['REQUEST_URI']);
         print_r($this->parseUrl());
          $url = $this->parseUrl();
