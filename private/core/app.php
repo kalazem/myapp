@@ -10,8 +10,6 @@ class App{
     public function __construct()
     {
           echo "from app";
-          if(isset($_SERVER['REQUEST_URI']))
-          print_r($_SERVER['REQUEST_URI']);
          print_r($this->parseUrl());
          echo "after app";
     }
@@ -21,8 +19,8 @@ class App{
      * @return void
      */
     public function parseUrl(){
-        if(isset($_GET['url'])){
-            return $url = explode('/',filter_var(rtrim($_GET['url'],'/') , FILTER_SANITIZE_URL));
+        if(isset($_SERVER['REQUEST_URI'])){
+            return $url = explode('/',filter_var(rtrim($_SERVER['REQUEST_URI'],'/') , FILTER_SANITIZE_URL));
         }else{
             return "not set";
         }
