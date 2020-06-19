@@ -1,7 +1,7 @@
 Options -MultiViews
 
 RewriteEngine On
-RewriteBase /
+RewriteBase https://my-forum-app-kal.herokuapp.com
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
