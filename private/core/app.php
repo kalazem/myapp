@@ -13,6 +13,7 @@ class App
         
 
         print_r($_SERVER['REQUEST_URI']);
+        print_r($this->parseUrl());
          $url = $this->parseUrl();
          unset($url[0]);
          unset($url[1]);
