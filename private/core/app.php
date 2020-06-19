@@ -11,6 +11,7 @@ class App{
     {
           echo "from app";
          print_r($this->parseUrl());
+         echo "after app";
     }
 
     /**
