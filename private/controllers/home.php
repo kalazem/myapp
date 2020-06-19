@@ -5,7 +5,9 @@ class Home {
         echo "controllers/home";
     }
 
-    public function index($name = ''){
+    public function index($name = 'empty'){
         echo $name;
+        echo $name;
+
      }
 }
