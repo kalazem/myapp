@@ -10,18 +10,12 @@ class App
     protected $method = "index";  //default method 
     protected $params = []; //holds any passed parameters via url 
     public function __construct(){
-        echo getcwd();
-        var_dump(file_exists('../app/private/controllers/home.php'));
-        print_r($_SERVER['REQUEST_URI']);
-        print_r($this->parseUrl());
-         $url = $this->parseUrl();
+          $url = $this->parseUrl();
          unset($url[0]);
         //if the requested controller exists 
         if(isset($url[1])){
-            echo "true1";
-        if (file_exists('../app/private/controllers/' . $url[1] . '.php')) {
-            echo "true2";
-            $this->controller = $url[1];
+         if (file_exists('../app/private/controllers/' . $url[1] . '.php')) {
+             $this->controller = $url[1];
             unset($url[1]);
         }
     }
@@ -30,11 +24,8 @@ class App
 
         //if the requested method exists 
         if(isset($url[2])){
-            echo "true3";
-            if(method_exists($this->controller,$url[2])){
-                echo "true4";
-                // echo "method exists";
-                $this->method = $url[2];
+             if(method_exists($this->controller,$url[2])){
+                 $this->method = $url[2];
                 unset($url[2]);
             }
         }
