@@ -10,7 +10,9 @@ class App
     protected $method = "index";  //default method 
     protected $params = []; //holds any passed parameters via url 
     public function __construct(){
+        
 
+        print_r($_SERVER['REQUEST_URI']);
          $url = $this->parseUrl();
          unset($url[0]);
          unset($url[1]);
