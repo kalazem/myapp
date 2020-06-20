@@ -10,13 +10,12 @@ class App
     protected $method = "index";  //default method 
     protected $params = []; //holds any passed parameters via url 
     public function __construct(){
-          $url = $this->parseUrl();
-         unset($url[0]);
-        //if the requested controller exists 
-        if(isset($url[1])){
-         if (file_exists('../app/private/controllers/' . $url[1] . '.php')) {
-             $this->controller = $url[1];
-            unset($url[1]);
+           $url = $this->parseUrl();
+          //if the requested controller exists 
+        if(isset($url[2])){
+          if (file_exists('../app/private/controllers/' . $url[2] . '.php')) {
+              $this->controller = $url[2];
+            unset($url[2]);
         }
     }
         require_once '../app/private/controllers/' . $this->controller . '.php';
@@ -24,9 +23,9 @@ class App
 
         //if the requested method exists 
         if(isset($url[2])){
-             if(method_exists($this->controller,$url[2])){
-                 $this->method = $url[2];
-                unset($url[2]);
+             if(method_exists($this->controller,$url[3])){
+                 $this->method = $url[3];
+                unset($url[3]);
             }
         }
 

@@ -1,13 +1,11 @@
 <?php 
-class Home {
+class Home extends Controller {
     public function __construct()
     {
-        echo "controllers/home";
+        parent::__construct();
     }
 
-    public function index($name = 'empty'){
-        echo $name;
-        echo $name;
-
-     }
+    public function index($name = 'empty'){   
+        $this->view->render("header",false,null);
+      }
 }
